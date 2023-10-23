@@ -34,3 +34,20 @@ links.forEach((link) => {
     });
   }
 });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Obtém o elemento do formulário com o ID "email" e armazena-o na variável "envio"
+const envio = document.getElementById("email");
+
+// Adiciona um ouvinte de evento para o evento de envio do formulário
+envio.addEventListener("submit", (evento) => {
+    evento.preventDefault(); // Impede o envio padrão do formulário
+    evento.stopPropagation(); // Impede que o evento de propagação suba na hierarquia de elementos
+
+    // Exibe uma mensagem de alerta para o usuário
+    window.alert("Mensagem encaminhada com sucesso, obrigado por entrar em contato!");
+
+    // Reseta o formulário, limpando os campos
+    envio.reset();
+});
